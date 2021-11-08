@@ -14,3 +14,14 @@ require("channels")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
+const inputElement = document.getElementById("word");
+
+const letterElements = document.querySelectorAll("#letters > button");
+
+letterElements.forEach((letterElement) => {
+  letterElement.addEventListener("click", (event) => {
+    event.currentTarget.disabled = true;
+    inputElement.value += event.currentTarget.innerText
+  });
+});

@@ -1,9 +1,12 @@
 <h1>New game</h1>
 <div class="row jus">
-  <div class="col-10">
+  <div id="letters" class="col-10">
       <% @letters.each do |letter| %>
-        <p class="btn btn-primary w-15"><%= letter %></p>
+        <button class="btn btn-primary w-15"><%= letter %></button>
       <% end %>
+
+      <p>Your current score is: <%= @score %></p>
+
       <form action="/score" method="post">
         <label for="word" class="form-label">What is the longest word you can find?</label>
         <input id="word" class="form-control mb-3" type="text" name="word" placeholder="Type your word here">
